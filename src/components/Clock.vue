@@ -1,6 +1,6 @@
 <template>
   <div class="clock">
-    <span>Hoje é {{ clock.day }}/{{ clock.month }}/{{ clock.year }}</span>
+    <span>Hoje é {{ clock.weekday }}, {{ clock.day }}/{{ clock.month }}/{{ clock.year }}</span>
     <span> às {{ clock.hours }}:{{ clock.minutes }}:{{ clock.seconds }}</span>
   </div>
 </template>
@@ -26,5 +26,8 @@ export default {
 <style scoped>
 .clock {
   margin: 20px;
+}
+span {
+  font-size: 20px;
 }
 </style>

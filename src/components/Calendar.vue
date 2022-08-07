@@ -63,9 +63,10 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
+  width: 90%;
   transition: 0.1s all;
   margin: 0;
+  font-size: 12px;
 }
 .day:hover .holiday-desc {
   opacity: 1;
