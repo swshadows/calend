@@ -1,16 +1,11 @@
 <template>
   <div class="grid" v-if="months">
-    <div v-for="month in months" :key="month.id">
-      <h2>{{ month.name }}, {{ month.id }}</h2>
-      <p>Total de dias: {{ month.days }}</p>
-      <h4>Feriados</h4>
-      <ul v-if="month.holidays.length > 0">
-        <li v-for="holiday in month.holidays" :key="holiday.name">{{ holiday.name }}, {{ holiday.duration }} dia(s)</li>
-      </ul>
-      <ul v-else>
-        <li style="color: #fc5a5a">Sem feriados definidos</li>
-      </ul>
-    </div>
+    <router-link v-for="month in months" :key="month.id" :to="{ name: 'month', params: { id: month.id } }">
+      <div>
+        <h2>{{ month.name }}</h2>
+        <p>Total de dias: {{ month.days }}</p>
+      </div>
+    </router-link>
   </div>
   <Spinner v-else />
 </template>
@@ -35,10 +30,17 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
 .grid {
   display: grid;
   grid-template: 1fr / 1fr 1fr 1fr;
   gap: 20px;
+}
+.grid h2 {
+  color: #5189c0;
 }
 .grid div {
   border: 3px solid #eee;

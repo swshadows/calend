@@ -25,5 +25,5 @@
   ```
 
 - Baixe as requisições do projeto com o comando `npm install`
-- Configure a requisição `fetch` no componente `Months.vue` para o endereço da API Holid (`localhost:3000`)
+- Altere os endpoints da API web para a API local em `@/views/MonthView.vue` e `@/components/Months.vue`
 - Inicialize o projeto com o comando `npm run serve`

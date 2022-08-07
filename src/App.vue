@@ -1,25 +1,21 @@
 <template>
   <h1 class="main-title">Calend</h1>
-  <Today />
-  <Months />
-  <Footer />
+  <Clock />
+  <router-view />
 </template>
 
 <script>
-import Today from "@/components/Today.vue";
-import Months from "@/components/Months.vue";
-import Footer from "@/components/Footer.vue";
+import Clock from "@/components/Clock.vue";
 export default {
-  name: "App",
-  components: { Today, Months, Footer },
+  components: { Clock },
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
 
 * {
-  font-family: "Uchen", serif;
+  font-family: "Mukta", sans-serif;
 }
 
 #app {
@@ -27,7 +23,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  max-width: 1200px;
+  color: #2c3e50;
+  max-width: 1000px;
   color: #4d4d4d;
   margin: 0 auto;
 }
