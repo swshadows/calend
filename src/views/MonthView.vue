@@ -28,7 +28,7 @@ export default {
   setup(props) {
     const month = ref();
     onMounted(async () => {
-      const res = await fetch("https://swshadows-holid.herokuapp.com/" + props.id);
+      const res = await fetch("https://holid-production.up.railway.app/" + props.id);
       if (res.status == 200) {
         const data = await res.json();
         month.value = data;

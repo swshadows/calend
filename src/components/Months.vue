@@ -18,7 +18,7 @@ export default {
   setup() {
     const months = ref();
     onMounted(async () => {
-      const res = await fetch("https://swshadows-holid.herokuapp.com");
+      const res = await fetch("https://holid-production.up.railway.app");
       if (res.status == 200) {
         const data = await res.json();
         months.value = data;
