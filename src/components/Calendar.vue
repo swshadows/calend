@@ -1,6 +1,11 @@
 <template>
   <div class="calendar">
-    <span class="day" :class="{ 'holiday-color': day.name && !day.changes }" v-for="day in daysWithHolidays" :key="day">
+    <span
+      class="day"
+      :class="{ 'holiday-color': day.name && !day.changes }"
+      v-for="day in daysWithHolidays"
+      :key="day"
+    >
       {{ day.day || day }}
       <p class="holiday-desc" v-if="day.name && !day.changes">
         <span>{{ day.name }}</span>
@@ -14,7 +19,6 @@ import { computed } from "@vue/runtime-core";
 export default {
   props: ["month"],
   setup(props) {
-    console.log(props);
     const daysWithHolidays = computed(() => {
       const days = [];
 

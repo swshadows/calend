@@ -28,7 +28,7 @@ export default {
   setup(props) {
     const month = ref();
     onMounted(async () => {
-      const res = await fetch("https://holid-production.up.railway.app/" + props.id);
+      const res = await fetch(process.env.VUE_APP_DEPLOY + props.id);
       if (res.status == 200) {
         const data = await res.json();
         month.value = data;

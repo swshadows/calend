@@ -1,6 +1,10 @@
 <template>
   <div class="grid" v-if="months">
-    <router-link v-for="month in months" :key="month.id" :to="{ name: 'month', params: { id: month.id } }">
+    <router-link
+      v-for="month in months"
+      :key="month.id"
+      :to="{ name: 'month', params: { id: month.id } }"
+    >
       <div>
         <h2>{{ month.name }}</h2>
         <p>Total de dias: {{ month.days }}</p>
@@ -18,7 +22,7 @@ export default {
   setup() {
     const months = ref();
     onMounted(async () => {
-      const res = await fetch("https://holid-production.up.railway.app");
+      const res = await fetch(process.env.VUE_APP_DEPLOY);
       if (res.status == 200) {
         const data = await res.json();
         months.value = data;
